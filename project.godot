@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Jumper"
-run/main_scene="res://scripts/Game_Manger.tscn"
+run/main_scene="res://levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Music="*res://scenes/music.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
