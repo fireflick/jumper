@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://crki5g7a1u0s5"]
 
-[ext_resource type="Script" path="res://scripts/Game Manager.gd" id="1_uinn0"]
+[ext_resource type="PackedScene" uid="uid://2lmyy8flmcuc" path="res://scenes/hud.tscn" id="1_nc3bg"]
 [ext_resource type="FontFile" uid="uid://ca1aa7u68ximq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8y0eh"]
 [ext_resource type="Texture2D" uid="uid://cc335b6l1q6he" path="res://assets/sprites/world_tileset.png" id="3_r4li0"]
 [ext_resource type="PackedScene" uid="uid://1yxghwhndv06" path="res://scenes/player.tscn" id="4_hfxln"]
@@ -538,6 +538,22 @@ _data = {
 "StartLevel": SubResource("Animation_s7l41")
 }
 
+[sub_resource type="Animation" id="Animation_f83og"]
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(530, 189), Vector2(533, 108)]
+}
+
 [sub_resource type="Animation" id="Animation_iqolh"]
 resource_name = "move6_lvl2"
 length = 2.3
@@ -553,22 +569,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(530, 189), Vector2(530, 107)]
-}
-
-[sub_resource type="Animation" id="Animation_f83og"]
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 1.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(530, 189), Vector2(533, 108)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2s5sf"]
@@ -653,22 +653,6 @@ _data = {
 "RESET": SubResource("Animation_b8xfp")
 }
 
-[sub_resource type="Animation" id="Animation_afcvn"]
-resource_name = "move6_lvl2"
-length = 1.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1761, 155)]
-}
-
 [sub_resource type="Animation" id="Animation_irpi3"]
 length = 1.5
 loop_mode = 2
@@ -685,10 +669,41 @@ tracks/0/keys = {
 "values": [Vector2(1761, 155), Vector2(1816, 164)]
 }
 
+[sub_resource type="Animation" id="Animation_afcvn"]
+resource_name = "move6_lvl2"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1761, 155)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_al5og"]
 _data = {
 "RESET": SubResource("Animation_irpi3"),
 "move6_lvl2": SubResource("Animation_afcvn")
+}
+
+[sub_resource type="Animation" id="Animation_s1gsn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("platform7:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1972, 172)]
 }
 
 [sub_resource type="Animation" id="Animation_hjyni"]
@@ -708,25 +723,25 @@ tracks/0/keys = {
 "values": [Vector2(1972, 172), Vector2(1972, 136)]
 }
 
-[sub_resource type="Animation" id="Animation_s1gsn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u68kw"]
+_data = {
+"RESET": SubResource("Animation_s1gsn"),
+"move7_lvl2": SubResource("Animation_hjyni")
+}
+
+[sub_resource type="Animation" id="Animation_rcpsw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("platform7:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1972, 172)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u68kw"]
-_data = {
-"RESET": SubResource("Animation_s1gsn"),
-"move7_lvl2": SubResource("Animation_hjyni")
+"values": [Vector2(2005, 89)]
 }
 
 [sub_resource type="Animation" id="Animation_7nn0a"]
@@ -746,21 +761,6 @@ tracks/0/keys = {
 "values": [Vector2(2005, 89), Vector2(2005, 136)]
 }
 
-[sub_resource type="Animation" id="Animation_rcpsw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2005, 89)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_007b8"]
 _data = {
 "RESET": SubResource("Animation_rcpsw"),
@@ -770,19 +770,7 @@ _data = {
 [node name="level_2" type="Node2D"]
 position = Vector2(14, -4)
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_uinn0")
-
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 1834.0
-offset_top = -37.0
-offset_right = 1989.0
-offset_bottom = -16.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_8y0eh")
-theme_override_font_sizes/font_size = 8
-text = "you collected 0 coins!"
+[node name="HUD" parent="." instance=ExtResource("1_nc3bg")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(15, 108)
@@ -825,7 +813,7 @@ shape = SubResource("WorldBoundaryShape2D_ganhk")
 position = Vector2(181, -27)
 
 [node name="coin2" parent="coins" instance=ExtResource("8_4ar0c")]
-position = Vector2(416, -9)
+position = Vector2(360, 172)
 
 [node name="coin3" parent="coins" instance=ExtResource("8_4ar0c")]
 position = Vector2(166, -23)
@@ -936,7 +924,7 @@ motion_mirroring = Vector2(485, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 texture_repeat = 3
-position = Vector2(-2, 4)
+position = Vector2(2, -11)
 texture = ExtResource("11_6f7r0")
 centered = false
 
@@ -997,3 +985,4 @@ position = Vector2(2005, 89)
 libraries = {
 "": SubResource("AnimationLibrary_007b8")
 }
+autoplay = "move8_lvl2"

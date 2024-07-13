@@ -1,8 +1,10 @@
 extends Area2D
 
 @onready var timer = $Timer
+@onready var game_manager = GameManager
 
 func _on_body_entered(body):
+	game_manager.death()
 	print("Game over!")
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
