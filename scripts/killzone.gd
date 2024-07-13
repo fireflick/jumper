@@ -2,8 +2,10 @@ extends Area2D
 
 @onready var timer = $Timer
 @onready var game_manager = GameManager
+@onready var oof = $Oof
 
 func _on_body_entered(body):
+	oof.play()
 	game_manager.death()
 	print("Game over!")
 	Engine.time_scale = 0.5

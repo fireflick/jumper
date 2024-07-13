@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbilt0bjs56n1"]
+[gd_scene load_steps=3 format=3 uid="uid://bbilt0bjs56n1"]
 
 [ext_resource type="Script" path="res://scripts/killzone.gd" id="1_jmufm"]
+[ext_resource type="AudioStream" uid="uid://c380oqu0h8jf7" path="res://assets/music/Oof.mp3" id="2_8wh2l"]
 
 [node name="killlzone" type="Area2D"]
 collision_mask = 2
@@ -9,6 +10,10 @@ script = ExtResource("1_jmufm")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.49
 one_shot = true
+
+[node name="Oof" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8wh2l")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

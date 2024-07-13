@@ -1,58 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://wqtp72wra8c0"]
+[gd_scene load_steps=8 format=3 uid="uid://wqtp72wra8c0"]
 
 [ext_resource type="Script" path="res://scripts/next_level.gd" id="1_4aoqk"]
-[ext_resource type="Texture2D" uid="uid://hg2wg8qvyho1" path="res://assets/sprites/fruit.png" id="1_bwipo"]
+[ext_resource type="Texture2D" uid="uid://dixgua4ou1sto" path="res://assets/sprites/dungeon_.png" id="2_kghd8"]
+[ext_resource type="AudioStream" uid="uid://biecna88v56mu" path="res://assets/sounds/door_open.mp3" id="3_dckly"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_frlop"]
-atlas = ExtResource("1_bwipo")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_53xtr"]
+atlas = ExtResource("2_kghd8")
+region = Rect2(0, 48, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3jvc"]
-atlas = ExtResource("1_bwipo")
-region = Rect2(0, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jvj1"]
+atlas = ExtResource("2_kghd8")
+region = Rect2(48, 48, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxrm3"]
-atlas = ExtResource("1_bwipo")
-region = Rect2(0, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sj3li"]
-atlas = ExtResource("1_bwipo")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_78xhx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2gvx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_frlop")
+"texture": SubResource("AtlasTexture_53xtr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c3jvc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qxrm3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sj3li")
+"texture": SubResource("AtlasTexture_8jvj1")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mkn0b"]
-radius = 10.0499
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsly"]
+size = Vector2(15, 24)
 
 [node name="NextLevel" type="Area2D"]
+position = Vector2(0, 12)
 collision_mask = 2
 script = ExtResource("1_4aoqk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_78xhx")
-autoplay = "default"
-frame = 1
-frame_progress = 0.40364
+[node name="DoorSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 0.9375)
+sprite_frames = SubResource("SpriteFrames_f2gvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mkn0b")
+position = Vector2(-0.5, 11)
+shape = SubResource("RectangleShape2D_cvsly")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DoorOpenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dckly")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
