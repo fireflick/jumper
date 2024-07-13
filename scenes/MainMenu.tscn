@@ -505,25 +505,27 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 646.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="StartButton" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 368.0
 offset_top = 372.0
 offset_right = 824.0
 offset_bottom = 448.0
+focus_neighbor_bottom = NodePath("../QuitButton")
 theme_override_fonts/font = ExtResource("4_h0v4d")
 theme_override_font_sizes/font_size = 40
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 368.0
 offset_top = 469.0
 offset_right = 824.0
 offset_bottom = 545.0
+focus_neighbor_top = NodePath("../StartButton")
 theme_override_fonts/font = ExtResource("4_h0v4d")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_button_2_pressed"]
