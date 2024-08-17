@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cnb8bmh4vse4r"]
+[gd_scene load_steps=29 format=3 uid="uid://cnb8bmh4vse4r"]
 
 [ext_resource type="PackedScene" uid="uid://2lmyy8flmcuc" path="res://scenes/hud.tscn" id="1_imgr2"]
 [ext_resource type="FontFile" uid="uid://ca1aa7u68ximq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vau6e"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://bihwo8p58fcfc" path="res://assets/fonts/PixelOperator8.ttf" id="9_0d874"]
 [ext_resource type="PackedScene" uid="uid://hsdy6go7eftn" path="res://scenes/slime.tscn" id="10_6qb2c"]
 [ext_resource type="PackedScene" uid="uid://wqtp72wra8c0" path="res://scenes/next_level.tscn" id="11_p3a37"]
+[ext_resource type="PackedScene" uid="uid://bpkm34fjbr0tl" path="res://scenes/trampoline.tscn" id="13_8uk3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2trsl"]
 texture = ExtResource("3_aad5l")
@@ -694,20 +695,11 @@ position = Vector2(945, 44)
 [node name="coin8" parent="coins" instance=ExtResource("8_eya7p")]
 position = Vector2(1020, -22)
 
-[node name="coin13" parent="coins" instance=ExtResource("8_eya7p")]
-position = Vector2(1903, 33)
-
 [node name="coin14" parent="coins" instance=ExtResource("8_eya7p")]
-position = Vector2(1929, 30)
-
-[node name="coin15" parent="coins" instance=ExtResource("8_eya7p")]
-position = Vector2(1953, 33)
+position = Vector2(1940, 36)
 
 [node name="coin16" parent="coins" instance=ExtResource("8_eya7p")]
-position = Vector2(1966, 36)
-
-[node name="coin17" parent="coins" instance=ExtResource("8_eya7p")]
-position = Vector2(1981, 34)
+position = Vector2(2021, 18)
 
 [node name="coin9" parent="coins" instance=ExtResource("8_eya7p")]
 position = Vector2(1276, -37)
@@ -781,3 +773,6 @@ theme_override_font_sizes/font_size = 8
 text = "ready for the next Level?"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Trampoline_area" parent="." instance=ExtResource("13_8uk3o")]
+position = Vector2(354, 0)
