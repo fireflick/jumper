@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpkm34fjbr0tl"]
+[gd_scene load_steps=5 format=3 uid="uid://bpkm34fjbr0tl"]
 
 [ext_resource type="Script" path="res://scripts/trampoline.gd" id="1_csotb"]
 [ext_resource type="Texture2D" uid="uid://bx5dkytbdhwbo" path="res://assets/sprites/camelot_ [version 1.0]/trampoline_jmpr.png" id="2_bta18"]
+[ext_resource type="AudioStream" uid="uid://r81lp2egqlwe" path="res://assets/sounds/trampoline_sound.wav" id="3_ha3d3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu40x"]
 size = Vector2(19, 3.5)
@@ -18,5 +19,8 @@ shape = SubResource("RectangleShape2D_hu40x")
 position = Vector2(-14.125, 3.8147e-06)
 scale = Vector2(0.0202083, 0.0171875)
 texture = ExtResource("2_bta18")
+
+[node name="trampoline_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ha3d3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

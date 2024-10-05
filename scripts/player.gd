@@ -16,6 +16,8 @@ var max_jumps = 2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var jump_sound: AudioStreamPlayer2D = $jump_sound
+@onready var _2_jump_sound: AudioStreamPlayer2D = $"2_jump_sound"
 
 func _physics_process(delta):
 	var is_on_ground = is_on_floor()
@@ -70,12 +72,15 @@ func jump():
 	jump_count += 1
 	can_double_jump = true
 	double_jump_timer = double_jump_window
+	jump_sound.play()
 
 func double_jump():
 	velocity.y = DOUBLE_JUMP_VELOCITY
 	jump_count += 1
 	can_double_jump = false
-
+	_2_jump_sound.play()
+	
 func launch(force: Vector2):
 	velocity += force
+	
 	
