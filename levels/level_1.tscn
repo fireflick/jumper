@@ -538,3 +538,18 @@ autowrap_mode = 2
 
 [node name="Trampoline_area" parent="." instance=ExtResource("13_8uk3o")]
 position = Vector2(354, 0)
+
+[node name="coin" parent="." instance=ExtResource("8_eya7p")]
+position = Vector2(341, -72)
+
+[node name="coin2" parent="." instance=ExtResource("8_eya7p")]
+position = Vector2(340, -90)
+
+[node name="coin3" parent="." instance=ExtResource("8_eya7p")]
+position = Vector2(356, -91)
+
+[node name="coin4" parent="." instance=ExtResource("8_eya7p")]
+position = Vector2(360, -71)
+
+[node name="coin5" parent="." instance=ExtResource("8_eya7p")]
+position = Vector2(347, -105)
