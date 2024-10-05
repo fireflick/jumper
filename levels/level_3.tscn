@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://5ffaohosoekm"]
+[gd_scene load_steps=44 format=3 uid="uid://5ffaohosoekm"]
 
 [ext_resource type="PackedScene" uid="uid://2lmyy8flmcuc" path="res://scenes/hud.tscn" id="1_1gssy"]
 [ext_resource type="PackedScene" uid="uid://1yxghwhndv06" path="res://scenes/player.tscn" id="2_p55ll"]
@@ -7558,6 +7558,9 @@ texture = ExtResource("21_k33os")
 [sub_resource type="TileSet" id="TileSet_3f6a3"]
 sources/0 = SubResource("TileSetAtlasSource_mg7fu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yisrq"]
+size = Vector2(131.542, 24.4341)
+
 [node name="level_3" type="Node2D"]
 
 [node name="HUD" parent="." instance=ExtResource("1_1gssy")]
@@ -7588,3 +7591,8 @@ scale = Vector2(1.09886, 1.01518)
 tile_set = SubResource("TileSet_3f6a3")
 format = 2
 layer_0/tile_data = PackedInt32Array(-393099, 262144, 1, -589712, 262144, 1, -524176, 262144, 1, -458640, 262144, 1, -393104, 262144, 1, -655248, 262144, 1, -655247, 262144, 1, -655246, 262144, 1, -655245, 262144, 1, -655244, 262144, 1, -655243, 262144, 1, -589711, 262144, 1, -524175, 262144, 1, -458639, 262144, 1, -393103, 262144, 1, -589707, 262144, 1, -524171, 262144, 1, -458635, 262144, 1, -720784, 262144, 1, -786320, 262144, 1, -851856, 262144, 1, -851855, 262144, 1, -786319, 262144, 1, -720783, 262144, 1, -851854, 262144, 1, -786318, 262144, 1, -720782, 262144, 1, -589710, 262144, 1, -851853, 262144, 1, -786317, 262144, 1, -720781, 262144, 1, -720780, 262144, 1, -851852, 262144, 1, -851851, 262144, 1, -786315, 262144, 1, -720779, 262144, 1, -786316, 262144, 1, -851850, 262144, 1, -786314, 262144, 1, -720778, 262144, 1, -655242, 262144, 1, -589706, 262144, 1, -524170, 262144, 1, -458634, 262144, 1, -393098, 262144, 1, -589709, 262144, 1, -589708, 262144, 1, -917392, 0, 1, -917386, 0, 1, -917388, 0, 1, -917390, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(69, 7)
+rotation = -0.7512
+shape = SubResource("RectangleShape2D_yisrq")
