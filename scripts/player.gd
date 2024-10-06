@@ -5,6 +5,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const DOUBLE_JUMP_VELOCITY = -200.0
 const LAUNCH_RESET_MSEC = 300
+var max_slope_angle = 45
 
 var can_double_jump = false
 var double_jump_window = 0.2
