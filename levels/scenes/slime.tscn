@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://hsdy6go7eftn"]
+[gd_scene load_steps=11 format=3 uid="uid://hsdy6go7eftn"]
 
 [ext_resource type="Texture2D" uid="uid://dv8hwih47yrth" path="res://assets/sprites/slime_green.png" id="1_fr7i0"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_uj2lo"]
-[ext_resource type="PackedScene" uid="uid://bbilt0bjs56n1" path="res://scenes/killlzone.tscn" id="2_78mcm"]
+[ext_resource type="PackedScene" uid="uid://bbilt0bjs56n1" path="res://levels/scenes/killlzone.tscn" id="2_78mcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cms7w"]
+size = Vector2(14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7ilu"]
 atlas = ExtResource("1_fr7i0")
@@ -43,8 +46,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmfak"]
 size = Vector2(14, 15)
 
-[node name="slime" type="Node2D"]
+[node name="slime" type="Area2D"]
 script = ExtResource("1_uj2lo")
+
+[node name="CollisionbulletHit" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_cms7w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qxpia")
@@ -53,6 +62,7 @@ frame = 1
 frame_progress = 0.674174
 
 [node name="killlzone" parent="." instance=ExtResource("2_78mcm")]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killlzone"]
 position = Vector2(0, 5)

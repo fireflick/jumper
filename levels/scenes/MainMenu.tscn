@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://ctoc3fioqlabi"]
 
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_7i5x7"]
-[ext_resource type="Texture2D" uid="uid://cc335b6l1q6he" path="res://assets/sprites/world_tileset.png" id="2_l7gnf"]
-[ext_resource type="Texture2D" uid="uid://dfxtukff54k5s" path="res://assets/backgrounds/mainMenu_jumper_background.png" id="2_wpyd3"]
-[ext_resource type="FontFile" uid="uid://ca1aa7u68ximq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_h0v4d"]
-[ext_resource type="Texture2D" uid="uid://cb2enxju47i3t" path="res://assets/backgrounds/MainMenu_title_text.png" id="4_ydsnn"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_4ifk2"]
+[ext_resource type="Texture2D" uid="uid://dfxtukff54k5s" path="res://assets/backgrounds/mainMenu_jumper_background.png" id="2_h0c22"]
+[ext_resource type="Texture2D" uid="uid://cc335b6l1q6he" path="res://assets/sprites/world_tileset.png" id="3_ehq7u"]
+[ext_resource type="Texture2D" uid="uid://cb2enxju47i3t" path="res://assets/backgrounds/MainMenu_title_text.png" id="4_a6fld"]
+[ext_resource type="FontFile" uid="uid://ca1aa7u68ximq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_hgp0t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2trsl"]
-texture = ExtResource("2_l7gnf")
+texture = ExtResource("3_ehq7u")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -233,11 +233,11 @@ _data = {
 }
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_7i5x7")
+script = ExtResource("1_4ifk2")
 
 [node name="MainMenuJumperBackground" type="Sprite2D" parent="."]
 position = Vector2(638, 371)
-texture = ExtResource("2_wpyd3")
+texture = ExtResource("2_h0c22")
 
 [node name="TileMap" type="TileMap" parent="."]
 visible = false
@@ -252,7 +252,7 @@ layer_1/name = "Mid"
 texture_filter = 4
 position = Vector2(591, 340)
 scale = Vector2(0.614077, 0.614077)
-texture = ExtResource("4_ydsnn")
+texture = ExtResource("4_a6fld")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainMenuTitleText"]
 libraries = {
@@ -273,7 +273,7 @@ offset_top = 372.0
 offset_right = 824.0
 offset_bottom = 448.0
 focus_neighbor_bottom = NodePath("../QuitButton")
-theme_override_fonts/font = ExtResource("4_h0v4d")
+theme_override_fonts/font = ExtResource("5_hgp0t")
 theme_override_font_sizes/font_size = 40
 text = "Start Game"
 
@@ -284,7 +284,7 @@ offset_top = 469.0
 offset_right = 824.0
 offset_bottom = 545.0
 focus_neighbor_top = NodePath("../StartButton")
-theme_override_fonts/font = ExtResource("4_h0v4d")
+theme_override_fonts/font = ExtResource("5_hgp0t")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 

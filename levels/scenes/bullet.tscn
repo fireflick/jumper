@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ghgiwmaj71o8"]
+
+[ext_resource type="Script" path="res://levels/scenes/bullet.gd" id="1_bbeaq"]
+[ext_resource type="Texture2D" uid="uid://c8rhbvculgvqm" path="res://assets/sprites/camelot_ [version 1.0]/excalibur_.png" id="1_njgwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdv18"]
+size = Vector2(20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5it0e"]
+atlas = ExtResource("1_njgwo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i5yu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5it0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_bbeaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(5, 2)
+shape = SubResource("RectangleShape2D_pdv18")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 2)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_i5yu3")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

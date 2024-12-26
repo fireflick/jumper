@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://1yxghwhndv06"]
+[gd_scene load_steps=28 format=3 uid="uid://1yxghwhndv06"]
 
 [ext_resource type="Texture2D" uid="uid://bhd8u3756yyq0" path="res://assets/sprites/knight.png" id="1_qaad3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vg416"]
+[ext_resource type="PackedScene" uid="uid://ghgiwmaj71o8" path="res://levels/scenes/bullet.tscn" id="2_n7saa"]
 [ext_resource type="AudioStream" uid="uid://dyhwdhj8vlbxc" path="res://assets/sounds/jump_sound.wav" id="3_jp8e8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3iowi"]
@@ -176,6 +177,7 @@ radius = 6.08276
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_vg416")
+bullet = ExtResource("2_n7saa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -12)

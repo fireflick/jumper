@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@export var bullet: PackedScene
+
+var can_shoot: bool = true
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -28,6 +31,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_ground:
 		velocity.y += gravity * delta
+		
+	spawn_bullet()
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
@@ -84,4 +89,9 @@ func double_jump():
 func launch(force: Vector2):
 	velocity += force
 	
-	
+func spawn_bullet():
+	if can_shoot:
+		if Input.is_action_just_pressed("Shoot"):
+			var bullet_instance = bullet.instantiate()
+			bullet_instance.global_transform = global_transform 
+			get_parent().add_child(bullet_instance)
