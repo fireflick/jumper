@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var bullet: PackedScene
+@onready var shoot_sound: AudioStreamPlayer2D = $shootSound
 
 var can_shoot: bool = true
 
@@ -95,3 +96,4 @@ func spawn_bullet():
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.global_transform = global_transform 
 			get_parent().add_child(bullet_instance)
+			shoot_sound.play()

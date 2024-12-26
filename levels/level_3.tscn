@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://5ffaohosoekm"]
+[gd_scene load_steps=50 format=3 uid="uid://5ffaohosoekm"]
 
 [ext_resource type="PackedScene" uid="uid://2lmyy8flmcuc" path="res://levels/scenes/hud.tscn" id="1_1gssy"]
 [ext_resource type="PackedScene" uid="uid://1yxghwhndv06" path="res://levels/scenes/player.tscn" id="2_p55ll"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bbilt0bjs56n1" path="res://levels/scenes/killlzone.tscn" id="24_88bay"]
 [ext_resource type="PackedScene" uid="uid://bpkm34fjbr0tl" path="res://levels/scenes/trampoline.tscn" id="25_c8n7x"]
 [ext_resource type="PackedScene" uid="uid://ct3xjx66mrjfx" path="res://levels/scenes/platform.tscn" id="26_w18mo"]
+[ext_resource type="PackedScene" uid="uid://ryyahxmnu1r6" path="res://levels/scenes/platform_small_ICE.tscn" id="27_yljhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2trsl"]
 texture = ExtResource("3_yt567")
@@ -2980,3 +2981,9 @@ position = Vector2(1045, -86)
 
 [node name="platform2" parent="." instance=ExtResource("26_w18mo")]
 position = Vector2(1116, -120)
+
+[node name="slime2" parent="." instance=ExtResource("23_5ok6e")]
+position = Vector2(1172, -122)
+
+[node name="platform_small" parent="." instance=ExtResource("27_yljhg")]
+position = Vector2(1162, -113)

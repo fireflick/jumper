@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://1yxghwhndv06"]
+[gd_scene load_steps=29 format=3 uid="uid://1yxghwhndv06"]
 
 [ext_resource type="Texture2D" uid="uid://bhd8u3756yyq0" path="res://assets/sprites/knight.png" id="1_qaad3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vg416"]
 [ext_resource type="PackedScene" uid="uid://ghgiwmaj71o8" path="res://levels/scenes/bullet.tscn" id="2_n7saa"]
 [ext_resource type="AudioStream" uid="uid://dyhwdhj8vlbxc" path="res://assets/sounds/jump_sound.wav" id="3_jp8e8"]
+[ext_resource type="AudioStream" uid="uid://cqd5tpii5mq2" path="res://assets/sounds/Sword2.wav" id="5_kso3p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3iowi"]
 atlas = ExtResource("1_qaad3")
@@ -195,3 +196,6 @@ stream = ExtResource("3_jp8e8")
 
 [node name="2_jump_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_jp8e8")
+
+[node name="shootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kso3p")

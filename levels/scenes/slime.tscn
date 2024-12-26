@@ -46,7 +46,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmfak"]
 size = Vector2(14, 15)
 
-[node name="slime" type="Area2D"]
+[node name="slime" type="RigidBody2D"]
 script = ExtResource("1_uj2lo")
 
 [node name="CollisionbulletHit" type="CollisionShape2D" parent="."]
