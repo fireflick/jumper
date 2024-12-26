@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b0lw7c3bdoeic" path="res://assets/sounds/MonsterKill.wav" id="3_uv18q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdv18"]
-size = Vector2(20, 10)
+size = Vector2(9, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5it0e"]
 atlas = ExtResource("1_njgwo")
@@ -28,11 +28,10 @@ script = ExtResource("1_bbeaq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(5, -6)
+position = Vector2(5, 0)
 shape = SubResource("RectangleShape2D_pdv18")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -6)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_i5yu3")
 autoplay = "default"
@@ -41,4 +40,7 @@ autoplay = "default"
 stream = ExtResource("3_uv18q")
 bus = &"SFX"
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

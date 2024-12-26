@@ -5,12 +5,14 @@ extends CharacterBody2D
 
 var can_shoot: bool = true
 
+const BULLET_SPEED = 324.0
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const DOUBLE_JUMP_VELOCITY = -200.0
 const LAUNCH_RESET_MSEC = 300
 var max_slope_angle = 45
 
+var facing_right = true
 var can_double_jump = false
 var double_jump_window = 0.2
 var double_jump_timer = 0
@@ -41,7 +43,7 @@ func _physics_process(delta):
 			jump()
 		elif jump_count < max_jumps:
 			double_jump()
-			
+
 	if can_double_jump  and not is_on_ground:
 		double_jump_timer -= delta
 		if double_jump_timer <= 0:
@@ -52,8 +54,10 @@ func _physics_process(delta):
 	
 	#Flip the Sprite
 	if direction > 0:
+		facing_right = true
 		animated_sprite.flip_h = false
 	elif direction < 0:
+		facing_right = false
 		animated_sprite.flip_h = true
 	
 	#Play animations
@@ -91,9 +95,16 @@ func launch(force: Vector2):
 	velocity += force
 	
 func spawn_bullet():
-	if can_shoot:
-		if Input.is_action_just_pressed("Shoot"):
-			var bullet_instance = bullet.instantiate()
-			bullet_instance.global_transform = global_transform 
-			get_parent().add_child(bullet_instance)
-			shoot_sound.play()
+	if can_shoot and Input.is_action_just_pressed("Shoot"):
+		var bullet_instance = bullet.instantiate()
+		bullet_instance.global_transform = global_transform
+		var facing_direction = global_transform.x.normalized()
+		bullet_instance.global_position.y -= 7
+		bullet_instance.velocity = Vector2(1.0, 0).normalized() * BULLET_SPEED
+		if (facing_right == false):
+			bullet_instance.global_position.x -= 20
+			bullet_instance.velocity = Vector2(-1.0, 0).normalized() * BULLET_SPEED
+			bullet_instance.rotation_degrees = 180
+		
+		get_parent().add_child(bullet_instance)
+		shoot_sound.play()
