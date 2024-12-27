@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var can_shoot: bool = true
 
-const BULLET_SPEED = 324.0
+const BULLET_SPEED =  324
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const DOUBLE_JUMP_VELOCITY = -200.0
@@ -19,7 +19,7 @@ var double_jump_timer = 0
 var jump_count = 0
 var max_jumps = 2
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -108,3 +108,4 @@ func spawn_bullet():
 		
 		get_parent().add_child(bullet_instance)
 		shoot_sound.play()
+		

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ghgiwmaj71o8"]
 
-[ext_resource type="Script" path="res://levels/scenes/bullet.gd" id="1_bbeaq"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_bbeaq"]
 [ext_resource type="Texture2D" uid="uid://c8rhbvculgvqm" path="res://assets/sprites/camelot_ [version 1.0]/excalibur_.png" id="1_njgwo"]
 [ext_resource type="AudioStream" uid="uid://b0lw7c3bdoeic" path="res://assets/sounds/MonsterKill.wav" id="3_uv18q"]
 
@@ -28,10 +28,11 @@ script = ExtResource("1_bbeaq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(5, 0)
+position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_pdv18")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_i5yu3")
 autoplay = "default"
