@@ -9,4 +9,3 @@ func _ready():
 	
 func _on_score_updated():
 	score_label.text = "Score: " + str(game_manager.score)
-	print("Score updated")

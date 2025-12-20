@@ -487,10 +487,10 @@ autoplay = "move3"
 [node name="labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="labels"]
-offset_left = -22.0
-offset_top = -25.0
-offset_right = 69.0
-offset_bottom = -2.0
+offset_left = -17.0
+offset_top = -38.0
+offset_right = 74.0
+offset_bottom = -15.0
 theme_override_colors/font_color = Color(0.287699, 0.334928, 0.447684, 1)
 theme_override_fonts/font = ExtResource("9_0d874")
 theme_override_font_sizes/font_size = 8

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2lmyy8flmcuc"]
+[gd_scene load_steps=4 format=3 uid="uid://2lmyy8flmcuc"]
 
 [ext_resource type="FontFile" uid="uid://bihwo8p58fcfc" path="res://assets/fonts/PixelOperator8.ttf" id="1_fcfnn"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ojjy8"]
+[ext_resource type="Texture2D" uid="uid://cl0c62u4643qe" path="res://assets/sprites/arrow.png" id="3_y7s2t"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ojjy8")
@@ -17,3 +18,23 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_fcfnn")
 theme_override_font_sizes/font_size = 24
 text = "Score:0"
+
+[node name="MoveLeftButton" type="TouchScreenButton" parent="."]
+position = Vector2(52, 513)
+scale = Vector2(6.8125, 6.25)
+texture_normal = ExtResource("3_y7s2t")
+action = "move_left"
+
+[node name="MoveLeftButton2" type="TouchScreenButton" parent="."]
+position = Vector2(328, 614)
+rotation = 3.14159
+scale = Vector2(6.8125, 6.25)
+texture_normal = ExtResource("3_y7s2t")
+action = "move_right"
+
+[node name="MoveLeftButton3" type="TouchScreenButton" parent="."]
+position = Vector2(1120.38, 516)
+rotation = 1.5708
+scale = Vector2(6.8125, 10.0363)
+texture_normal = ExtResource("3_y7s2t")
+action = "jump"

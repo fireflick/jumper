@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpkm34fjbr0tl"]
 
 [ext_resource type="Script" path="res://scripts/trampoline.gd" id="1_csotb"]
-[ext_resource type="Texture2D" uid="uid://bx5dkytbdhwbo" path="res://assets/sprites/camelot_ [version 1.0]/trampoline_jmpr.png" id="2_bta18"]
+[ext_resource type="Texture2D" uid="uid://bx5dkytbdhwbo" path="res://assets/sprites/trampoline_jmpr.png" id="2_bta18"]
 [ext_resource type="AudioStream" uid="uid://r81lp2egqlwe" path="res://assets/sounds/trampoline_sound.wav" id="3_ha3d3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu40x"]
