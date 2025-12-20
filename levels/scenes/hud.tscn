@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://2lmyy8flmcuc"]
+[gd_scene load_steps=5 format=3 uid="uid://2lmyy8flmcuc"]
 
 [ext_resource type="FontFile" uid="uid://bihwo8p58fcfc" path="res://assets/fonts/PixelOperator8.ttf" id="1_fcfnn"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ojjy8"]
 [ext_resource type="Texture2D" uid="uid://cl0c62u4643qe" path="res://assets/sprites/arrow.png" id="3_y7s2t"]
+[ext_resource type="Texture2D" uid="uid://cpi5ty2k3obdv" path="res://assets/sprites/shoot_button.png" id="4_wfjc0"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ojjy8")
@@ -21,22 +22,30 @@ text = "Score:0"
 
 [node name="TouchControls" type="CanvasLayer" parent="."]
 
+[node name="JumpButtomn" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(755, 472)
+rotation = -0.00530242
+scale = Vector2(6.24271, 3.37209)
+texture_normal = ExtResource("3_y7s2t")
+action = "jump"
+
+[node name="ShootButton" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(1069, 330)
+rotation = 1.5708
+scale = Vector2(6.52359, 6.83947)
+texture_normal = ExtResource("4_wfjc0")
+action = "Shoot"
+
 [node name="MoveLeftButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(52, 513)
-scale = Vector2(6.8125, 6.25)
+position = Vector2(-23, 677)
+rotation = -1.55136
+scale = Vector2(3.68399, 6.37431)
 texture_normal = ExtResource("3_y7s2t")
 action = "move_left"
 
-[node name="MoveLeftButton2" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(328, 614)
-rotation = -3.14159
-scale = Vector2(6.8125, 6.25)
+[node name="MoveRightButton" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(543, 445)
+rotation = 1.5708
+scale = Vector2(3.69432, 7.09651)
 texture_normal = ExtResource("3_y7s2t")
 action = "move_right"
-
-[node name="MoveLeftButton3" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(1120.38, 516)
-rotation = 1.5708
-scale = Vector2(6.8125, 10.0363)
-texture_normal = ExtResource("3_y7s2t")
-action = "jump"
