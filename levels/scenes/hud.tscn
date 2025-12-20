@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7gvdqoutckvq" path="res://assets/sprites/ArrowJump.png" id="3_1n1a1"]
 [ext_resource type="Texture2D" uid="uid://cpi5ty2k3obdv" path="res://assets/sprites/shoot_button.png" id="4_wfjc0"]
 [ext_resource type="Texture2D" uid="uid://b48utn53xigsa" path="res://assets/sprites/arrow left.png" id="5_u2giq"]
-[ext_resource type="Texture2D" uid="uid://dow5nl0q78pj3" path="res://assets/sprites/arrowRight.png" id="6_5vt3q"]
+[ext_resource type="Texture2D" uid="uid://c2b8pme1c2wal" path="res://assets/sprites/arrow right.png" id="6_hegko"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ojjy8")
@@ -25,27 +25,26 @@ text = "Score:0"
 [node name="TouchControls" type="CanvasLayer" parent="."]
 
 [node name="JumpButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(750, 445)
-scale = Vector2(12.7427, 6.20568)
+position = Vector2(833, 406)
+scale = Vector2(12.3677, 7.32689)
 texture_normal = ExtResource("3_1n1a1")
 action = "jump"
 
 [node name="ShootButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(1109, 207)
+position = Vector2(1113, 215)
 rotation = 1.5708
 scale = Vector2(6.52359, 6.66309)
 texture_normal = ExtResource("4_wfjc0")
 action = "Shoot"
 
 [node name="MoveLeftButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(1, 423)
-scale = Vector2(10.3437, 6.90909)
-texture_normal = ExtResource("6_5vt3q")
+position = Vector2(-86, 434)
+scale = Vector2(8.1875, 6.69697)
+texture_normal = ExtResource("5_u2giq")
 action = "move_left"
 
 [node name="MoveRightButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(685, 648)
-rotation = 3.14159
-scale = Vector2(10.5454, 6.59079)
-texture_normal = ExtResource("5_u2giq")
+position = Vector2(177, 437)
+scale = Vector2(8.3763, 6.60011)
+texture_normal = ExtResource("6_hegko")
 action = "move_right"
