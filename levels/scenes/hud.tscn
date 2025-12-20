@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://2lmyy8flmcuc"]
+[gd_scene load_steps=7 format=3 uid="uid://2lmyy8flmcuc"]
 
 [ext_resource type="FontFile" uid="uid://bihwo8p58fcfc" path="res://assets/fonts/PixelOperator8.ttf" id="1_fcfnn"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_ojjy8"]
-[ext_resource type="Texture2D" uid="uid://cl0c62u4643qe" path="res://assets/sprites/arrow.png" id="3_y7s2t"]
+[ext_resource type="Texture2D" uid="uid://b7gvdqoutckvq" path="res://assets/sprites/ArrowJump.png" id="3_1n1a1"]
 [ext_resource type="Texture2D" uid="uid://cpi5ty2k3obdv" path="res://assets/sprites/shoot_button.png" id="4_wfjc0"]
+[ext_resource type="Texture2D" uid="uid://b48utn53xigsa" path="res://assets/sprites/arrow left.png" id="5_u2giq"]
+[ext_resource type="Texture2D" uid="uid://dow5nl0q78pj3" path="res://assets/sprites/arrowRight.png" id="6_5vt3q"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ojjy8")
@@ -23,29 +25,27 @@ text = "Score:0"
 [node name="TouchControls" type="CanvasLayer" parent="."]
 
 [node name="JumpButtomn" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(755, 472)
-rotation = -0.00530242
-scale = Vector2(6.24271, 3.37209)
-texture_normal = ExtResource("3_y7s2t")
+position = Vector2(709, 322)
+scale = Vector2(12.7427, 9.20568)
+texture_normal = ExtResource("3_1n1a1")
 action = "jump"
 
 [node name="ShootButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(1069, 330)
+position = Vector2(1109, 207)
 rotation = 1.5708
-scale = Vector2(6.52359, 6.83947)
+scale = Vector2(6.52359, 6.66309)
 texture_normal = ExtResource("4_wfjc0")
 action = "Shoot"
 
 [node name="MoveLeftButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(-23, 677)
-rotation = -1.55136
-scale = Vector2(3.68399, 6.37431)
-texture_normal = ExtResource("3_y7s2t")
+position = Vector2(605, 606)
+rotation = 3.14159
+scale = Vector2(8.79344, 7.48068)
+texture_normal = ExtResource("5_u2giq")
 action = "move_left"
 
 [node name="MoveRightButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(543, 445)
-rotation = 1.5708
-scale = Vector2(3.69432, 7.09651)
-texture_normal = ExtResource("3_y7s2t")
+position = Vector2(38, 351)
+scale = Vector2(8.70456, 7.82378)
+texture_normal = ExtResource("6_5vt3q")
 action = "move_right"
