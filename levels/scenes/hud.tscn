@@ -24,9 +24,9 @@ text = "Score:0"
 
 [node name="TouchControls" type="CanvasLayer" parent="."]
 
-[node name="JumpButtomn" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(709, 322)
-scale = Vector2(12.7427, 9.20568)
+[node name="JumpButton" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(750, 445)
+scale = Vector2(12.7427, 6.20568)
 texture_normal = ExtResource("3_1n1a1")
 action = "jump"
 
@@ -38,14 +38,14 @@ texture_normal = ExtResource("4_wfjc0")
 action = "Shoot"
 
 [node name="MoveLeftButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(605, 606)
-rotation = 3.14159
-scale = Vector2(8.79344, 7.48068)
-texture_normal = ExtResource("5_u2giq")
+position = Vector2(1, 423)
+scale = Vector2(10.3437, 6.90909)
+texture_normal = ExtResource("6_5vt3q")
 action = "move_left"
 
 [node name="MoveRightButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(38, 351)
-scale = Vector2(8.70456, 7.82378)
-texture_normal = ExtResource("6_5vt3q")
+position = Vector2(685, 648)
+rotation = 3.14159
+scale = Vector2(10.5454, 6.59079)
+texture_normal = ExtResource("5_u2giq")
 action = "move_right"
