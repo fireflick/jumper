@@ -6,6 +6,8 @@ extends CanvasLayer
 func _ready():
 	game_manager.connect("score_updated", Callable(self, "_on_score_updated"))
 	_on_score_updated()
+	if not DisplayServer.is_touchscreen_available():
+		$TouchControls.visible = false
 	
 func _on_score_updated():
 	score_label.text = "Score: " + str(game_manager.score)

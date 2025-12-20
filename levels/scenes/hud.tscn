@@ -19,20 +19,22 @@ theme_override_fonts/font = ExtResource("1_fcfnn")
 theme_override_font_sizes/font_size = 24
 text = "Score:0"
 
-[node name="MoveLeftButton" type="TouchScreenButton" parent="."]
+[node name="TouchControls" type="CanvasLayer" parent="."]
+
+[node name="MoveLeftButton" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(52, 513)
 scale = Vector2(6.8125, 6.25)
 texture_normal = ExtResource("3_y7s2t")
 action = "move_left"
 
-[node name="MoveLeftButton2" type="TouchScreenButton" parent="."]
+[node name="MoveLeftButton2" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(328, 614)
-rotation = 3.14159
+rotation = -3.14159
 scale = Vector2(6.8125, 6.25)
 texture_normal = ExtResource("3_y7s2t")
 action = "move_right"
 
-[node name="MoveLeftButton3" type="TouchScreenButton" parent="."]
+[node name="MoveLeftButton3" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(1120.38, 516)
 rotation = 1.5708
 scale = Vector2(6.8125, 10.0363)
